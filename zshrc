@@ -15,7 +15,6 @@ alias vimconfig="$EDITOR ~/.vimrc"
 alias be="bundle exec"
 alias rspec="nocorrect rspec"
 alias rac="rails_apps_composer"
-eval "$(hub alias -s)"
 
 # Enable plugins 
 # export plugins=(git osx ruby)
@@ -58,14 +57,17 @@ function define_vim_wrappers()
   done
 }
 
+export PATH="/usr/local/bin:$PATH"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
 eval "$(direnv hook zsh)"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 export PATH="$HOME/.bin:$PATH"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
 source $(brew --prefix nvm)/nvm.sh
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+eval "$(hub alias -s)"
