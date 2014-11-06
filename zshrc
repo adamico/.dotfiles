@@ -15,6 +15,8 @@ alias vimconfig="$EDITOR ~/.vimrc"
 alias be="bundle exec"
 alias rspec="nocorrect rspec"
 alias rac="rails_apps_composer"
+killpg () { psql -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE pid <> pg_backend_pid();" -d $* }
+
 eval "$(hub alias -s)"
 
 # Enable plugins 
@@ -63,9 +65,16 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 eval "$(direnv hook zsh)"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 export PATH="$HOME/.bin:$PATH"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
 source $(brew --prefix nvm)/nvm.sh
+
+export RBENV_ROOT="${HOME}/.rbenv"
+
+if [ -d "${RBENV_ROOT}" ]; then
+  export PATH="${RBENV_ROOT}/bin:${PATH}"
+  eval "$(rbenv init -)"
+fi
+
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
