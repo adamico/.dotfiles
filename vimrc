@@ -19,7 +19,7 @@ let g:ruby_doc_command='open'
 let g:jquery_doc_command='open'
 
 "" rspec syntax highlight
-autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
+autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let feature scenario
 highlight def link rubyRspec Function
 
 "" es6 filetype is javascript
@@ -39,7 +39,7 @@ let g:rails_projections = {
       \ },
       \ "spec/features/*_spec.rb": {
       \   "command": "feature",
-      \   "template": "require 'spec_helper'\n\nfeature '%h' do\n\nend",
+      \   "template": "require 'rails_helper'\n\nfeature '%h' do\n\nend",
       \ }}
 
 let g:rails_gem_projections = {
@@ -62,11 +62,17 @@ let g:rails_gem_projections = {
       \   }
       \ },
       \ "factory_girl_rails": {
-      \   "spec/factories.rb": {
-      \     "command": "factories",
-      \     "template": "FactoryGirl.define do\nend"
+      \   "spec/factories/*.rb": {
+      \     "command": "factory",
+      \      "related": "app/model/%s.rb",
+      \     "template": ["FactoryGirl.define do", "factory :%s do", "end", "end"]
       \   }
       \ }}
+
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "MyUltiSnips"]
 
 ""
 "" Backup and swap
