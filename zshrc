@@ -15,6 +15,7 @@ alias vimconfig="$EDITOR ~/.vimrc"
 alias be="bundle exec"
 alias rspec="nocorrect rspec"
 alias rac="rails_apps_composer"
+
 killpg () { psql -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE pid <> pg_backend_pid();" -d $* }
 
 eval "$(hub alias -s)"
@@ -59,6 +60,8 @@ function define_vim_wrappers()
     fi
   done
 }
+
+export PATH="/usr/local/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
