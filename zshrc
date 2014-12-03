@@ -18,8 +18,6 @@ alias rac="rails_apps_composer"
 
 killpg () { psql -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE pid <> pg_backend_pid();" -d $* }
 
-eval "$(hub alias -s)"
-
 # Enable plugins 
 # export plugins=(git osx ruby)
 plugins=(git history-substring-search rails)
@@ -67,6 +65,8 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 eval "$(direnv hook zsh)"
+
+eval "$(hub alias -s)"
 
 export PATH="$HOME/.bin:$PATH"
 
