@@ -3,16 +3,6 @@ call pathogen#infect()
 
 let mapleader = ","
 
-runtime macros/matchit.vim
-
-""
-"" Basic Setup
-""
-set guioptions-=T " hide toolbar"
-syntax on
-filetype plugin indent on
-set encoding=utf-8    	" Set default encoding to UTF-8
-
 "" ruby doc and jquery doc api
 let g:ruby_doc_command='open'
 let g:jquery_doc_command='open'
@@ -84,12 +74,10 @@ set noswapfile
 "" visual
 ""
 set visualbell t_vb=
-colorscheme railscasts
+set background=dark
+colorscheme solarized
 set nu			" Show line numbers
 set wrap		" Wrap lines
-set ruler		" Show line and column number
-set t_Co=256
-set background=dark
 "au WinLeave * setlocal nocursorline nocursorcolumn
 "au WinEnter * setlocal cursorline cursorcolumn
 set cursorline cursorcolumn
@@ -108,18 +96,9 @@ nnoremap <c-l> <c-w>l
 ""
 set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
-set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
-set backspace=indent,eol,start    " backspace through everything in insert mode
-
-" List chars
-set listchars=""                  " Reset the listchars
-set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
-set listchars+=trail:.            " show trailing spaces as dots
 
 """ Searching
-set hlsearch    " highlight matches
-set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
@@ -127,10 +106,6 @@ set smartcase   " ... unless they contain at least one capital letter
 "" cmdline completion
 ""
 set wildmode=list:longest   "make cmdline tab completion similar to bash
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-
-set formatoptions-=o "dont continue comments when pushing o/O
 
 "" My mappings
 ""
