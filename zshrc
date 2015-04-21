@@ -64,14 +64,9 @@ export PATH="/usr/local/bin:$PATH"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-eval "$(direnv hook zsh)"
-
 eval "$(hub alias -s)"
 
 export PATH="$HOME/.bin:$PATH"
-
-export PATH="$PATH:/usr/local/lib/node_modules"
-source $(brew --prefix nvm)/nvm.sh
 
 export RBENV_ROOT="${HOME}/.rbenv"
 
@@ -79,5 +74,3 @@ if [ -d "${RBENV_ROOT}" ]; then
   export PATH="${RBENV_ROOT}/bin:${PATH}"
   eval "$(rbenv init -)"
 fi
-
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
