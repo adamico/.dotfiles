@@ -136,4 +136,7 @@ inoremap <C-L> <SPACE>=><SPACE>
 " this works just as META+ENTER in textmate
 inoremap <S-CR> <ESC>o
 
+" F12 uses Tidy
+map <F12> :%!tidy -q --tidy-mark 0 2>/dev/null<CR>
+
 let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
