@@ -75,7 +75,8 @@ set noswapfile
 ""
 set visualbell t_vb=
 set background=dark
-colorscheme solarized
+set t_Co=256
+colorscheme railscasts
 set nu			" Show line numbers
 set wrap		" Wrap lines
 "au WinLeave * setlocal nocursorline nocursorcolumn
@@ -95,8 +96,15 @@ nnoremap <c-l> <c-w>l
 "" Whitespace
 ""
 set tabstop=2                     " a tab is two spaces
+set expandtab                     " use spaces, not tabs"
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set list                          " Show invisible characters
+set backspace=indent,eol,start    " backspace through everything in insert mode		
+
+" List chars
+set listchars=""                  " Reset the listchars		
+set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."		
+set listchars+=trail:.            " show trailing spaces as dots
 
 """ Searching
 set ignorecase  " searches are case insensitive...
