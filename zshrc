@@ -3,7 +3,6 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-#export ZSH_THEME="robbyrussell"
 export ZSH_THEME="aussiegeek"
 
 export EDITOR="vim"
@@ -14,11 +13,10 @@ alias zshconfig="$EDITOR ~/.zshrc"
 alias vimconfig="$EDITOR ~/.vimrc"
 alias be="bundle exec"
 alias rspec="nocorrect rspec"
-alias rac="rails_apps_composer"
 
 killpg () { psql -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE pid <> pg_backend_pid();" -d $* }
 
-# Enable plugins 
+# Enable plugins
 # export plugins=(git osx ruby)
 plugins=(git history-substring-search rails)
 
