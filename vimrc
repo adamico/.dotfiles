@@ -58,11 +58,6 @@ let g:rails_gem_projections = {
       \   }
       \ }}
 
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "MyUltiSnips"]
-
 ""
 "" Backup and swap
 ""
@@ -115,6 +110,18 @@ set smartcase   " ... unless they contain at least one capital letter
 ""
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 
+"" statusline
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+
 "" My mappings
 ""
 nnoremap <F2> :Explore .<ENTER>
@@ -148,3 +155,5 @@ inoremap <S-CR> <ESC>o
 map <F12> :%!tidy -q --tidy-mark 0 2>/dev/null<CR>
 
 let g:AutoCloseProtectedRegions = ["Comment", "String", "Character"]
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
