@@ -83,8 +83,8 @@ set wrap		" Wrap lines
 "au WinEnter * setlocal cursorline cursorcolumn
 set cursorline cursorcolumn
 hi CursorLine ctermbg=233
-hi CursorColumn ctermbg=233
-set colorcolumn=80
+hi CursorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn=join(range(81,999),",")
 
 " easier navigation between split windows
 nnoremap <c-j> <c-w>j
