@@ -108,19 +108,21 @@ set smartcase   " ... unless they contain at least one capital letter
 ""
 "" cmdline completion
 ""
-set wildmode=list:longest   "make cmdline tab completion similar to bash
+set wildmenu
+"set wildmode=list:longest   "make cmdline tab completion similar to bash
 
 "" statusline
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+set statusline+=%F
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_checkers = ['mri']
 
 "" My mappings
 ""
