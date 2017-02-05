@@ -12,7 +12,7 @@ export EDITOR="vim"
 alias zshconfig="$EDITOR ~/.zshrc"
 alias vimconfig="$EDITOR ~/.vimrc"
 alias be="bundle exec"
-alias rspec="nocorrect rspec"
+alias rspec='nocorrect rspec'
 
 killpg () { psql -c "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE pid <> pg_backend_pid();" -d $* }
 
@@ -72,3 +72,8 @@ if [ -d "${RBENV_ROOT}" ]; then
   export PATH="${RBENV_ROOT}/bin:${PATH}"
   eval "$(rbenv init -)"
 fi
+
+export PATH="${HOME}/.zsh/complection:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+source $( echo $(which vv)-completions)

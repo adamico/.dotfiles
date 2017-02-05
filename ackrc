@@ -2,8 +2,10 @@
 --type-add=html=.html.erb,.html.haml
 --type-add=js=.js.erb
 --type-add=css=.sass
+--type-add=dumps=.dump
 --type-set=cucumber=.feature
 --type-add=jquery=jquery*.js
+--ignore-dir=db
 --ignore-dir=vendor
 --ignore-dir=log
 --ignore-dir=tmp
@@ -13,3 +15,4 @@
 --color
 --follow
 --group
+--nodumps

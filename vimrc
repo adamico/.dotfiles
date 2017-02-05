@@ -17,6 +17,9 @@ au BufNewFile,BufRead *.es6 setf javascript
 "" handlebars double curly with surround '-'
 autocmd FileType hbs let b:surround_45 = "{{ \r }}"
 
+"" use two space indentation for coffeescript
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
 "" vim rails projections
 
 let g:rails_projections = {
@@ -109,7 +112,7 @@ set smartcase   " ... unless they contain at least one capital letter
 "" cmdline completion
 ""
 set wildmenu
-"set wildmode=list:longest   "make cmdline tab completion similar to bash
+set wildmode=list:longest   "make cmdline tab completion similar to bash
 
 "" statusline
 set statusline+=%#warningmsg#
