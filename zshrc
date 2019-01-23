@@ -59,11 +59,6 @@ function define_vim_wrappers()
 
 export PATH="/usr/local/bin:$PATH"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
-eval "$(hub alias -s)"
-
 export PATH="$HOME/.bin:$PATH"
 
 export RBENV_ROOT="${HOME}/.rbenv"
