@@ -71,4 +71,3 @@ fi
 export PATH="${HOME}/.zsh/complection:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-source $( echo $(which vv)-completions)

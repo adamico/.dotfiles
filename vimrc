@@ -41,6 +41,7 @@ set noswapfile
 ""
 "" visual
 ""
+syntax on
 set visualbell t_vb=
 set background=dark
 set t_Co=256
